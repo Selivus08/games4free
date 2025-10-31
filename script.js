@@ -78,7 +78,7 @@ function displayZones(zones) {
     if (container.innerHTML === "") {
         container.innerHTML = "No zones found.";
     } else {
-        document.getElementById("zoneCount").textContent = `Zones Loaded: ${zones.length}`;
+        document.getElementById("zoneCount").textContent = `Games Loaded: ${zones.length}`;
     }
 }
 
@@ -179,4 +179,5 @@ const darkModeToggle = document.getElementById('darkModeToggle');
 darkModeToggle.addEventListener('click', () => {
     document.body.classList.toggle('dark-mode');
 });
+
 listZones();
