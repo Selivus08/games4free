@@ -1,203 +1,139 @@
-:root {
-    /* Define the core dark theme colors */
-    --color-background: #121212; /* Deep Black */
-    --color-card-bg: #1e1e2e; /* Dark Purple-Gray for surfaces */
-    --color-text: #e0eeef; /* Off-White Text */
-    --color-heading: #d8b4fe; /* Light Purple Heading */
-    --color-accent-primary: #9333ea; /* Primary Purple Button */
-    --color-accent-hover: #a855f7; /* Lighter Purple Hover */
-    --color-border: #4a287a; /* Darker Purple Border */
-}
+Make this look way better pls, probably like a dark purple and black theme 
 
-/* Base Body Styles */
+
 body {
-    font-family: 'Inter', sans-serif;
-    background-color: var(--color-background);
-    color: var(--color-text);
-    transition: background-color 0.3s;
+    font-family: Arial, sans-serif;
+    background-color: #333;
+    color: #fff;
 }
 
-/* Main Title */
 h1 {
     text-align: center;
-    color: var(--color-heading);
-    margin-top: 1.5rem;
-    font-size: 2.5rem;
-    font-weight: 800;
-    letter-spacing: 0.05em;
-    text-shadow: 0 0 10px rgba(147, 51, 234, 0.4);
+    color: #fff;
 }
 
-/* Search Bar Input */
 #searchBar {
     display: block;
     margin: 20px auto;
-    padding: 12px 15px;
-    width: 90%; /* Increased width for better mobile fit */
+    padding: 10px;
+    width: 80%;
     max-width: 800px;
-    border: 1px solid var(--color-border);
-    border-radius: 10px;
+    border: 1px solid #666;
+    border-radius: 5px;
     font-size: 16px;
-    background-color: var(--color-card-bg);
-    color: var(--color-text);
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.6);
-    transition: border-color 0.3s, box-shadow 0.3s;
+    background-color: #444;
+    color: #fff;
 }
 
-#searchBar:focus {
-    border-color: var(--color-accent-primary);
-    outline: none;
-    box-shadow: 0 0 5px rgba(147, 51, 234, 0.7);
-}
-
-/* Grid Container */
 #container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 15px;
-    max-width: 1000px; /* Increased max width for more items */
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+    max-width: 800px;
     margin: 0 auto;
-    padding: 10px;
 }
 
-/* Individual Zone Card */
 .zone-item {
-    background-color: var(--color-card-bg);
-    border: 1px solid var(--color-border);
-    border-radius: 12px;
+    background-color: #444;
+    border: 1px solid #666;
+    border-radius: 5px;
     overflow: hidden;
     text-align: center;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
     cursor: pointer;
-    color: var(--color-text);
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s;
-}
-
-.zone-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(147, 51, 234, 0.3);
+    color: #fff;
 }
 
 .zone-item img {
     width: 100%;
-    height: 140px; /* Fixed height for image consistency */
+    height: auto;
     object-fit: cover;
-    display: block;
 }
 
-/* View Zone Button */
 .zone-item button {
     width: 100%;
     padding: 10px;
     border: none;
-    background-color: var(--color-accent-primary);
+    background-color: #007bff;
     color: white;
     cursor: pointer;
-    border-radius: 0 0 12px 12px;
-    font-size: 15px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    transition: background-color 0.2s, transform 0.1s;
+    border-radius: 0 0 5px 5px;
+    font-size: 14px;
+    transition: background-color 0.2s;
 }
 
 .zone-item button:hover {
-    background-color: var(--color-accent-hover);
-    transform: translateY(-1px);
+    background-color: #0056b3;
 }
 
-/* Viewer Modal */
 #zoneViewer {
     display: none;
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.9); /* Semi-transparent overlay */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 80%;
+    background: #222;
+    border: 2px solid #000;
     z-index: 1000;
-    display: flex; /* Ensures content is centered */
-    align-items: center;
-    justify-content: center;
-}
-
-#zoneViewer > div {
-    width: 90%;
-    max-width: 1000px;
-    height: 90%;
-    background: var(--color-card-bg);
-    border: 2px solid var(--color-accent-primary);
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(147, 51, 234, 0.5);
-    display: flex;
-    flex-direction: column;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 #zoneViewer iframe {
     width: 100%;
-    flex-grow: 1; /* Allows iframe to fill available space */
+    height: 90%;
     border: none;
-    background-color: var(--color-background);
+    background-color: #333;
 }
 
-/* Viewer Header/Info Bar */
 #zoneInfo {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px;
-    background: #2a2a44; /* Slightly darker header */
-    color: var(--color-text);
-    font-size: 18px;
-    border-bottom: 1px solid var(--color-border);
+    padding: 5px;
+    background: #555;
+    color: #fff;
+    font-size: 16px;
 }
 
 #zoneTitle {
     text-align: left;
-    font-weight: 700;
-    color: var(--color-heading);
 }
 
 #zoneId {
-    color: #b088f9; /* Subdued accent for ID */
-    font-size: 0.9em;
+    color: #9c9c9c;
 }
 
-/* Viewer Controls */
 #controls {
     text-align: right;
 }
 
 #controls button {
-    padding: 8px 15px;
+    padding: 5px 10px;
     margin: 0 5px;
     border: none;
-    background-color: var(--color-accent-primary);
+    background-color: #007bff;
     color: white;
     cursor: pointer;
-    border-radius: 6px;
+    border-radius: 3px;
     font-size: 14px;
-    font-weight: 500;
     transition: background-color 0.2s;
 }
 
 #controls button:hover {
-    background-color: var(--color-accent-hover);
+    background-color: #0056b3;
 }
 
-/* Top Control Bar (Search, Data Buttons, Sort) */
 #topControls {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 10px auto;
-    width: 90%;
+    width: 80%;
     max-width: 800px;
-    flex-wrap: wrap; /* Allows wrapping on smaller screens */
-    gap: 10px;
 }
 
-/* Data Interaction Buttons */
 #dataButtons {
     display: flex;
     gap: 10px;
@@ -206,100 +142,124 @@ h1 {
 #dataButtons button {
     padding: 10px 15px;
     border: none;
-    background-color: #3b82f6; /* Blue for action buttons */
+    background-color: #4CAF50;
     color: white;
     cursor: pointer;
-    border-radius: 8px;
+    border-radius: 5px;
     font-size: 16px;
-    font-weight: 600;
-    transition: background-color 0.3s, transform 0.1s;
+    transition: background-color 0.3s;
 }
 
 #dataButtons button:hover {
-    background-color: #2563eb;
-    transform: translateY(-1px);
+    background-color: #367C39;
 }
 
-/* File Input Styling (Hidden and styled via button/label) */
 #dataButtons input[type="file"] {
-    /* Keeping the provided file input styles but they are often hidden in dark themes */
-    display: none; 
+    display: inline-block;
+    padding: 10px 15px;
+    border: 1px solid #666;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #555;
+    color: #fff;
 }
 
-/* Sort Dropdown */
 #sortOptions {
-    padding: 10px 30px 10px 15px; /* Added right padding for icon */
-    border: 1px solid var(--color-border);
-    border-radius: 8px;
+    padding: 10px;
+    border: 1px solid #666;
+    border-radius: 5px;
     font-size: 16px;
     appearance: none;
-    background-color: var(--color-card-bg);
-    color: var(--color-text);
-    cursor: pointer;
-    /* Custom background image for the dropdown arrow (inverted for dark mode) */
-    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="white"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>');
+    background-color: white;
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"><path fill="%23343a40" d="M2 0L0 2h4zm0 5L0 3h4z"/></svg>');
     background-repeat: no-repeat;
-    background-position: right 10px center;
-    background-size: 16px 16px;
+    background-position: right .75rem center;
+    background-size: 8px 10px;
 }
 
 #sortOptions:focus {
-    border-color: var(--color-accent-primary);
+    border-color: #80bdff;
     outline: 0;
-    box-shadow: 0 0 5px rgba(147, 51, 234, 0.7);
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, .25);
 }
 
-/* Dark Mode Toggle (Fixed position for quick access) */
 #darkModeToggle {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    padding: 12px 18px;
+    padding: 10px 15px;
     border: none;
-    background-color: var(--color-accent-primary);
+    background-color: #007bff;
     color: white;
     cursor: pointer;
-    border-radius: 50%; /* Circular button */
+    border-radius: 5px;
     font-size: 16px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-    transition: background-color 0.3s, transform 0.1s;
+    transition: background-color 0.3s;
     z-index: 1000;
 }
 
 #darkModeToggle:hover {
-    background-color: var(--color-accent-hover);
-    transform: scale(1.05);
+    background-color: #0056b3;
 }
 
-/* Responsive adjustments for top controls */
-@media (max-width: 768px) {
-    #topControls {
-        flex-direction: column;
-        align-items: stretch;
-        width: 100%;
-    }
-    #dataButtons {
-        justify-content: center;
-    }
-    #sortOptions {
-        width: 100%;
-        text-align: center;
-    }
-    /* Ensure search bar is full width on mobile */
-    #searchBar {
-        width: 100%;
-        margin-top: 0;
-    }
+body:not(.dark-mode) {
+    background-color: #f4f4f4;
+    color: #000;
+}
+
+body:not(.dark-mode) h1 {
+    color: #000;
+}
+
+body:not(.dark-mode) #searchBar {
+    border-color: #ddd;
+    background-color: #fff;
+    color: #000;
+}
+
+body:not(.dark-mode) .zone-item {
+    background-color: white;
+    border-color: #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: #000;
+}
+
+body:not(.dark-mode) #zoneViewer {
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+body:not(.dark-mode) #zoneViewer iframe {
+    background-color: #fff;
+}
+
+body:not(.dark-mode) #zoneInfo {
+    background: #ddd;
+    color: #000;
+}
+
+body:not(.dark-mode) #dataButtons input[type="file"] {
+    border-color: #ddd;
+    background-color: #f9f9f9;
+    color: #000;
+}
+
+body:not(.dark-mode) #sortOptions {
+    background-color: white;
+    color: #000;
+    border-color: #ddd;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E");
+}
+
+.zone-wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
 .zone-count {
     text-align: center;
     font-size: 18px;
-    margin-bottom: 15px;
-    color: #a0a0a0; /* Subdued color for count */
-    font-style: italic;
+    margin-bottom: 10px;
+    color: var(--text-color, #ffffff);
 }
-
-/* Remove Light Mode specific styles as the theme is fixed to dark now */
-/* body:not(.dark-mode) styles removed */
-
