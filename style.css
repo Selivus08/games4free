@@ -1,216 +1,137 @@
-/* Color Palette */
-:root {
-    --black: #000000;
-    --dark-grey: #1a1a1a;
-    --medium-grey: #2c2c2c;
-    --light-grey: #444444;
-    --dark-purple: #3a015a; /* A rich, deep purple */
-    --accent-purple: #7b2cbf; /* A vibrant purple for primary actions */
-    --hover-purple: #9d4edd; /* Lighter purple for hover states */
-    --text-color: #f0f0f0;
-    --text-muted: #b0b0b0;
-    --success-color: #4CAF50;
-    --success-hover: #367C39;
-}
 
-/* Base Styles */
+
+
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: var(--dark-grey);
-    color: var(--text-color);
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
-    transition: background-color 0.3s; /* Smooth transition for dark mode toggle */
+    font-family: Arial, sans-serif;
+    background-color: #333;
+    color: #fff;
 }
 
 h1 {
     text-align: center;
-    color: var(--accent-purple); /* Purple heading */
-    margin: 30px 0;
-    font-weight: 700;
-    letter-spacing: 1.5px;
+    color: #fff;
 }
 
-/* Search Bar */
 #searchBar {
     display: block;
     margin: 20px auto;
-    padding: 12px 15px;
-    width: 90%;
+    padding: 10px;
+    width: 80%;
     max-width: 800px;
-    border: none;
-    border-radius: 8px;
-    font-size: 17px;
-    background-color: var(--medium-grey);
-    color: var(--text-color);
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.6);
-    transition: background-color 0.3s, box-shadow 0.3s;
+    border: 1px solid #666;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #444;
+    color: #fff;
 }
 
-#searchBar::placeholder {
-    color: var(--text-muted);
-}
-
-#searchBar:focus {
-    outline: none;
-    background-color: var(--light-grey);
-    box-shadow: 0 0 0 2px var(--accent-purple);
-}
-
-/* Zone Grid */
 #container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); /* Slightly larger min size */
-    gap: 15px; /* Increased gap */
-    max-width: 1000px;
-    margin: 0 auto 50px auto; /* Added bottom margin */
-    padding: 0 20px;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-/* Zone Item Card */
 .zone-item {
-    background-color: var(--medium-grey);
-    border: 1px solid var(--light-grey);
-    border-radius: 10px;
+    background-color: #444;
+    border: 1px solid #666;
+    border-radius: 5px;
     overflow: hidden;
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7); /* Stronger shadow */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
     cursor: pointer;
-    color: var(--text-color);
-    transition: transform 0.2s, box-shadow 0.2s, background-color 0.3s;
-}
-
-.zone-item:hover {
-    transform: translateY(-5px); /* Lift effect */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.9), 0 0 10px var(--accent-purple); /* Purple glow on hover */
-    background-color: var(--light-grey);
+    color: #fff;
 }
 
 .zone-item img {
     width: 100%;
-    height: 120px; /* Fixed height for consistency */
+    height: auto;
     object-fit: cover;
-    display: block;
-}
-
-.zone-item h3 {
-    margin: 10px 0 5px 0;
-    padding: 0 10px;
-    font-size: 1.1em;
-    color: var(--accent-purple);
-}
-
-.zone-item p {
-    margin: 0 0 10px 0;
-    color: var(--text-muted);
-    font-size: 0.9em;
 }
 
 .zone-item button {
     width: 100%;
-    padding: 12px;
+    padding: 10px;
     border: none;
-    background-color: var(--dark-purple); /* Deep purple button */
-    color: var(--text-color);
+    background-color: #007bff;
+    color: white;
     cursor: pointer;
-    border-radius: 0 0 10px 10px;
-    font-size: 15px;
-    font-weight: 600;
+    border-radius: 0 0 5px 5px;
+    font-size: 14px;
     transition: background-color 0.2s;
 }
 
 .zone-item button:hover {
-    background-color: var(--accent-purple); /* Lighter purple on hover */
+    background-color: #0056b3;
 }
 
-/* Zone Viewer Modal */
 #zoneViewer {
     display: none;
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 90%;
-    max-width: 1200px;
-    height: 90%;
-    max-height: 800px;
-    background: var(--dark-grey);
-    border: 3px solid var(--accent-purple);
-    border-radius: 10px;
+    width: 80%;
+    height: 80%;
+    background: #222;
+    border: 2px solid #000;
     z-index: 1000;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.9);
-    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 #zoneViewer iframe {
     width: 100%;
-    height: calc(100% - 40px); /* Adjust height for info bar */
+    height: 90%;
     border: none;
-    background-color: var(--medium-grey);
+    background-color: #333;
 }
 
 #zoneInfo {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 40px;
-    padding: 0 15px;
-    background: var(--dark-purple);
-    color: var(--text-color);
-    font-size: 18px;
-    font-weight: 600;
+    padding: 5px;
+    background: #555;
+    color: #fff;
+    font-size: 16px;
 }
 
 #zoneTitle {
     text-align: left;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    margin-right: 15px;
-    color: var(--text-color);
 }
 
 #zoneId {
-    color: var(--text-muted);
-    font-size: 0.8em;
-    font-weight: normal;
+    color: #9c9c9c;
 }
 
-/* Viewer Controls */
 #controls {
     text-align: right;
-    display: flex;
-    gap: 10px;
 }
 
 #controls button {
-    padding: 8px 15px;
-    margin: 0;
+    padding: 5px 10px;
+    margin: 0 5px;
     border: none;
-    background-color: var(--accent-purple);
+    background-color: #007bff;
     color: white;
     cursor: pointer;
-    border-radius: 5px;
-    font-size: 15px;
-    transition: background-color 0.2s, transform 0.1s;
+    border-radius: 3px;
+    font-size: 14px;
+    transition: background-color 0.2s;
 }
 
 #controls button:hover {
-    background-color: var(--hover-purple);
-    transform: translateY(-1px);
+    background-color: #0056b3;
 }
 
-/* Top Controls (Search, Data, Sort) */
 #topControls {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 20px auto;
-    width: 90%;
+    margin: 10px auto;
+    width: 80%;
     max-width: 800px;
-    flex-wrap: wrap;
-    gap: 15px;
 }
 
 #dataButtons {
@@ -221,118 +142,91 @@ h1 {
 #dataButtons button {
     padding: 10px 15px;
     border: none;
-    background-color: var(--success-color); /* Green for data action */
+    background-color: #4CAF50;
     color: white;
     cursor: pointer;
     border-radius: 5px;
-    font-size: 15px;
-    font-weight: 600;
+    font-size: 16px;
     transition: background-color 0.3s;
 }
 
 #dataButtons button:hover {
-    background-color: var(--success-hover);
+    background-color: #367C39;
 }
 
 #dataButtons input[type="file"] {
     display: inline-block;
     padding: 10px 15px;
-    border: 1px solid var(--light-grey);
+    border: 1px solid #666;
     border-radius: 5px;
-    font-size: 15px;
+    font-size: 16px;
     cursor: pointer;
-    background-color: var(--medium-grey);
-    color: var(--text-color);
-    transition: background-color 0.3s;
-}
-
-#dataButtons input[type="file"]:hover {
-    background-color: var(--light-grey);
+    background-color: #555;
+    color: #fff;
 }
 
 #sortOptions {
-    padding: 10px 15px;
-    border: 1px solid var(--light-grey);
+    padding: 10px;
+    border: 1px solid #666;
     border-radius: 5px;
-    font-size: 15px;
+    font-size: 16px;
     appearance: none;
-    background-color: var(--medium-grey);
-    color: var(--text-color);
+    background-color: white;
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"><path fill="%23343a40" d="M2 0L0 2h4zm0 5L0 3h4z"/></svg>');
     background-repeat: no-repeat;
-    background-position: right 10px center;
+    background-position: right .75rem center;
     background-size: 8px 10px;
-    cursor: pointer;
-    /* Custom SVG for dark mode dropdown arrow */
-    background-image: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"><path fill="%23f0f0f0" d="M2 0L0 2h4zm0 5L0 3h4z"/></svg>');
-    transition: background-color 0.3s, border-color 0.3s;
 }
 
 #sortOptions:focus {
-    border-color: var(--accent-purple);
+    border-color: #80bdff;
     outline: 0;
-    box-shadow: 0 0 0 2px rgba(123, 44, 191, .3);
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, .25);
 }
 
-/* Dark Mode Toggle */
 #darkModeToggle {
     position: fixed;
-    bottom: 25px;
-    right: 25px;
-    padding: 12px 18px;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 15px;
     border: none;
-    background-color: var(--accent-purple);
+    background-color: #007bff;
     color: white;
     cursor: pointer;
-    border-radius: 50%; /* Make it a circle */
-    font-size: 18px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s;
     z-index: 1000;
-    line-height: 1; /* Center icon/text */
 }
 
 #darkModeToggle:hover {
-    background-color: var(--hover-purple);
-    transform: scale(1.05);
+    background-color: #0056b3;
 }
 
-/* Dark Mode Overrides (for light mode) - Adjusted to use CSS variables where possible */
-/* These will be used if your script removes the 'dark-mode' class or if it's not present */
-
 body:not(.dark-mode) {
-    background-color: #f4f4f4; /* Light background */
-    color: #333; /* Dark text */
+    background-color: #f4f4f4;
+    color: #000;
 }
 
 body:not(.dark-mode) h1 {
-    color: var(--dark-purple);
+    color: #000;
 }
 
 body:not(.dark-mode) #searchBar {
-    border: 1px solid #ccc;
+    border-color: #ddd;
     background-color: #fff;
-    color: #333;
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    color: #000;
 }
 
 body:not(.dark-mode) .zone-item {
     background-color: white;
-    border-color: #eee;
+    border-color: #ddd;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    color: #333;
-}
-
-body:not(.dark-mode) .zone-item button {
-    background-color: #007bff; /* Reverting to light mode button color */
-}
-
-body:not(.dark-mode) .zone-item button:hover {
-    background-color: #0056b3;
+    color: #000;
 }
 
 body:not(.dark-mode) #zoneViewer {
     background: white;
-    border-color: #ddd;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
@@ -342,40 +236,30 @@ body:not(.dark-mode) #zoneViewer iframe {
 
 body:not(.dark-mode) #zoneInfo {
     background: #ddd;
-    color: #333;
+    color: #000;
 }
 
 body:not(.dark-mode) #dataButtons input[type="file"] {
-    border-color: #ccc;
+    border-color: #ddd;
     background-color: #f9f9f9;
-    color: #333;
+    color: #000;
 }
 
 body:not(.dark-mode) #sortOptions {
     background-color: white;
-    color: #333;
-    border-color: #ccc;
-    /* Custom SVG for light mode dropdown arrow */
-    background-image: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'><path fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/></svg>");
+    color: #000;
+    border-color: #ddd;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E");
 }
 
-body:not(.dark-mode) #darkModeToggle {
-    background-color: var(--dark-purple); /* Keep purple accent */
-}
-
-
-/* Wrapper for max-width consistency */
 .zone-wrapper {
     max-width: 1000px;
     margin: 0 auto;
 }
 
-/* Zone Counter Style */
 .zone-count {
     text-align: center;
     font-size: 18px;
-    margin-bottom: 20px;
-    color: var(--accent-purple); /* Purple for count */
-    font-weight: 600;
-    padding: 0 20px;
+    margin-bottom: 10px;
+    color: var(--text-color, #ffffff);
 }
