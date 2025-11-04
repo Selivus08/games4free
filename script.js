@@ -4,7 +4,7 @@ let zoneFrame = document.getElementById('zoneFrame');
 const searchBar = document.getElementById('searchBar');
 const sortOptions = document.getElementById('sortOptions');
 // https://www.jsdelivr.com/tools/purge
-const zonesURL = "https://raw.githubusercontent.com/Selivus08/games4free/refs/heads/main/zones.json";
+const zonesURL = "https://raw.githubusercontent.com/remiafterdark/awesomestuff/refs/heads/main/zones.json";
 const coverURL = "https://cdn.jsdelivr.net/gh/gn-math/covers@main";
 const htmlURL = "https://cdn.jsdelivr.net/gh/gn-math/html@main";
 let zones = [];
@@ -181,3 +181,4 @@ darkModeToggle.addEventListener('click', () => {
 });
 
 listZones();
+
